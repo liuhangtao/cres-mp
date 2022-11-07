@@ -1,0 +1,99 @@
+classdef ModelEos_MP_CO2 < Model
+
+    properties (Constant)
+        % mc_num
+
+        % id
+        name  = 'CO2'
+        fluid = Fluid(1, ModelEos_MP_CO2.fluid_data)
+
+        % spc       % exsiting to denote the model is specific
+
+        % setup   % reserved
+
+        fluid_data = {{
+            'CO2', ...
+            [], ...
+            'Carbon dioxide', ...
+            'R-744', ...
+            'CO2.FLD', ...
+            'CO2', ...
+            'CO2', ...
+            44.0098, ...
+            194.6860, ...
+            216.5920, ...
+            304.1282, ...
+            7.3773, ...
+            10.6249, ...
+            0, ...
+            0.2239, ...
+            0, ...
+            [], ...
+            'other', ...
+            216.5920, ...
+            2000, ...
+            800, ...
+            77, ...
+            '77c8bee0', ...
+            'IIR', ...
+            1013, ...
+            1, ...
+            [], ...
+            'A1', ...
+            'CURLTUGMZLYLDI-UHFFFAOYSA-N', ...
+            '1S/CO2/c2-1-3' ...
+        }};
+
+        const = [304.128200000000	7377300	10624.9062708760	0.109600000000000	0.326530000000000	1.23730000000000	0.520000000000000	3];
+
+        para = [0.0332383726399474	11.7070832897511	-0.840220158131917	1.16662411740959	1	0.00172719148155864	19.2162180589294	-2.98206493511513	3.46062801213208	-3.92131472671538	-11.0317185374963	0];
+    end
+
+    methods (Static)
+        val = Ares(varargin);
+
+        val = P(varargin);
+
+        f22 = f_hmhr_bg(tr, rhor, const, para);
+        f31 = f_hmhr_bg_tr(tr, rhor, const, para);
+        f3 = f_hmhr_bg_rhor(tr, rhor, const, para);
+        f31 = f_hmhr_bg_2tr(tr, rhor, const, para);
+        f37 = f_hmhr_bg_rhor_tr(tr, rhor, const, para);
+        f14 = f_hmhr_bg_2rhor(tr, rhor, const, para);
+
+        f21 = f_hmhr_cr(tr, rhor, const, para);
+        f30 = f_hmhr_cr_tr(tr, rhor, const, para);
+        f2 = f_hmhr_cr_rhor(tr, rhor, const, para);
+        f30 = f_hmhr_cr_2tr(tr, rhor, const, para);        
+        f36 = f_hmhr_cr_rhor_tr(tr, rhor, const, para);
+        f13 = f_hmhr_cr_2rhor(tr, rhor, const, para);
+
+        f23 = f_hmhr_res(tr, rhor, para);
+        f5 = f_hmhr_res_tr(tr, rhor, para);
+        f4 = f_hmhr_res_rhor(tr, rhor, para);
+        f16 = f_hmhr_res_2tr(tr, rhor, para);
+        f9 = f_hmhr_res_rhor_tr(tr, rhor, para);
+        f15 = f_hmhr_res_2rhor(tr, rhor, para);
+        f19 = f_hmhr_res_rhor_2tr(tr, rhor, para);
+
+        f24 = f_kernel(tr, rhor, const, para);
+        f32 = f_kernel_tr(tr, rhor, const, para);
+        f8 = f_kernel_rhor(tr, rhor, const, para);
+        f32 = f_kernel_2tr(tr, rhor, const, para);
+        f38 = f_kernel_rhor_tr(tr, rhor, const, para);
+        f18 = f_kernel_2rhor(tr, rhor, const, para);
+
+        f25 = f_hmhr_id(tr, rhor);
+        f33 = f_hmhr_id_tr(tr);
+        f33 = f_hmhr_id_2tr(tr);
+        
+        f1 = f_p(t, rho, const, para);
+        f35 = f_p_t(t, rho, const, para);
+        f12 = f_p_rho(t, rho, const, para);
+
+        f6 = f_p_a(tr, rhor, const, para);
+        f7 = f_p_a_tr(tr, rhor, const, para);
+        f17 = f_p_a_2tr(tr, rhor, const, para);
+    end
+    
+end

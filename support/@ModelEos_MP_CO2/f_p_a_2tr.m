@@ -1,0 +1,9 @@
+function f17 = f_p_a_2tr(tr, rhor, const, para)
+% 201809271452
+r = 8.3144598;
+tc = const(1);
+rhoc = const(3);
+f17 = r * tc * rhoc * rhor / tr^3 * (2 + 2 * rhor * ...
+    ModelEos_MP_CO2.f_hmhr_res_rhor(tr, rhor, para) - 2 * rhor * tr * ...
+    ModelEos_MP_CO2.f_hmhr_res_rhor_tr(tr, rhor, para) + rhor * tr^2 * ...
+    ModelEos_MP_CO2.f_hmhr_res_rhor_2tr(tr, rhor, para));
