@@ -3,10 +3,10 @@ A MATLAB implementation of the crossover residual entropy scaling model incorpor
 
 Example:
 > [vis, tcx] = co2prop('vl', 't', 300, 'p', 20e6)
-
-> vis = 9.1026e-05
->   
-> tcx = 0.1001
+>
+>> vis = 9.1026e-05
+>>   
+>> tcx = 0.1001
 
 Refrence:
 
