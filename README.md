@@ -2,11 +2,11 @@
 A MATLAB implementation of the crossover residual entropy scaling model incorporating crossover multiparameter equation of state for the viscosity and thermal conductivity of carbon dioxide.
 
 Example:
-> [vis, tcx] = co2prop('vl', 't', 300, 'p', 20e6)
+> [v, l] = co2prop('VL', 'T', 300, 'P', 20e6)
 >
->> vis = 9.1026e-05
+>> v = 9.1026e-05
 >>   
->> tcx = 0.1001
+>> l = 0.1001
 
 Refrence:
 
