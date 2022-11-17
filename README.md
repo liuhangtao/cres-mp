@@ -10,6 +10,6 @@ Example:
 
 Refrence:
 
-[1] H. Liu, F. Yang, Z. Yang, Y. Duan, Crossover residual entropy scaling of the viscosity and thermal conductivity of carbon dioxide, submitted for publication, 2022.
+[1] H. Liu, F. Yang, Z. Yang, Y. Duan, Crossover residual entropy scaling of the viscosity and thermal conductivity of carbon dioxide, Journal of Molecular Liquids, 2022, in press.
 
 [2] F. Yang, Q. Liu, Y. Duan, Z. Yang, Crossover multiparameter equation of state: General procedure and demonstration with carbon dioxide, Fluid Phase Equilibria 494 (2019) 161171. doi:10.1016/j.fluid.2019.04.035.
